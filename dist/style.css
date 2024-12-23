@@ -5,7 +5,7 @@ svg {
 
 :root {
   --padding: 10vmin;
-  --color-background: #d0cbc7;
+  --color-background: #6ca9df;
   --font-size-large: 8vw;
   --font-size-medium: 4vw;
   --font-size-normal: 2vw;
@@ -101,7 +101,7 @@ canvas {
   position: relative;
   background-color: #131c2a;
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.1) 1px,
+      rgba(80, 125, 217, 0.1) 1px,
       transparent 1px
     ),
     linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
@@ -187,4 +187,155 @@ canvas {
   align-items: center;
   justify-content: center;
   font-size: var(--font-size-medium);
+}
+/* menu */
+.menu-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-button span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  position: relative;
+}
+
+.menu-button span::before,
+.menu-button span::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  left: 0;
+}
+
+.menu-button span::before {
+  top: -6px;
+}
+
+.menu-button span::after {
+  top: 6px;
+}
+
+.menu {
+  opacity: 0.3;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 50px;
+  position: fixed;
+  top: -100%;
+  align-items: center;
+  background-color: rgb(39, 39, 39);
+}
+
+.nav {
+  opacity: 0;
+  margin-bottom: -20px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 3rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  color: gray;
+  transition: all 0.2s ease-in-out;
+}
+
+.background {
+  position: absolute;
+  font-size: 15rem;
+  font-weight: 600;
+  color: rgba(235, 235, 235, 0.04);
+  user-select: none;
+  z-index: 1;
+}
+
+.small-number {
+  font-size: 1.2rem;
+}
+
+.exit {
+  cursor: pointer;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+
+.title {
+  font-size: 2rem;
+  color: rgb(170, 151, 126);
+}
+
+.right {
+  padding-right: 100px;
+}
+
+.information {
+  margin-bottom: 24px;
+}
+
+.menu-container {
+  z-index: 3;
+}
+
+.social-medias > a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* Media Query */
+@media screen and (max-width: 660px) {
+  .menu {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .right {
+    display: none;
+  }
+}
+
+/* Read More Button */
+.read-more {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.read-more:hover {
+  transform: translateX(-50%) scale(1.1);
+  background-color: #333;
 }
