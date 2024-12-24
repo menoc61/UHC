@@ -2,10 +2,100 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>UHCxplore</title>
+    <link rel="manifest" href="/manifest.json" />
+    <meta
+      name="title"
+      content="UHCxplore - Innovative Solutions for a Better Future"
+    />
+    <meta
+      name="description"
+      content="United Horizon Corporation (UHC) delivers innovative solutions across multiple sectors, focusing on AI, international trade, education, and sustainability. Explore our mission and services."
+    />
+    <meta
+      name="keywords"
+      content="UHC, United Horizon Corporation, AI solutions, international trade, education, sustainability, Africa, Cameroon, scholarships, digital transformation"
+    />
+    <meta name="author" content="United Horizon Corporation" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.uhcxplore.com" />
+    <meta
+      property="og:title"
+      content="UHCxplore - Innovative Solutions for a Better Future"
+    />
+    <meta
+      property="og:description"
+      content="United Horizon Corporation (UHC) delivers innovative solutions across multiple sectors, focusing on AI, international trade, education, and sustainability. Explore our mission and services."
+    />
+    <meta
+      property="og:image"
+      content="https://www.uhcxplore.com/images/og-image.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.uhcxplore.com" />
+    <meta
+      property="twitter:title"
+      content="UHCxplore - Innovative Solutions for a Better Future"
+    />
+    <meta
+      property="twitter:description"
+      content="United Horizon Corporation (UHC) delivers innovative solutions across multiple sectors, focusing on AI, international trade, education, and sustainability. Explore our mission and services."
+    />
+    <meta
+      property="twitter:image"
+      content="https://www.uhcxplore.com/images/og-image.jpg"
+    />
+
+    <!-- Mobile Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Accessibility -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="./assets/images/UHCxplore-logo.png"
+      type="image/x-icon"
+    />
+    <link rel="apple-touch-icon" href="./assets/images/UHCxplore-logo.png" />
+
+    <!-- Schema.org for Google -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "United Horizon Corporation",
+        "url": "https://www.uhcxplore.com",
+        "logo": "https://www.uhcxplore.com/images/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/uhcxplore",
+          "https://www.twitter.com/uhcxplore",
+          "https://www.linkedin.com/company/uhcxplore"
+        ]
+      }
+    </script>
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <title>UHCxplore - Innovative Solutions for a Better Future</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div id="trailer">
+      <i id="trailer-icon" class="fa-solid fa-arrow-up-right"></i>
+    </div>
     <!-- Sticky Circular Menu Button -->
     <div class="menu-button">
       <span></span>
@@ -16,17 +106,17 @@
       <div class="menu-container">
         <ul class="options">
           <li class="nav">
-            <a href="#" class="nav-link"
+            <a href="#" class="nav-link interactable" data-type="link"
               >Home <span class="small-number">01</span></a
             >
           </li>
           <li class="nav">
-            <a href="#" class="nav-link"
+            <a href="#" class="nav-link interactable" data-type="link"
               >Blog <span class="small-number">02</span></a
             >
           </li>
           <li class="nav">
-            <a href="#" class="nav-link"
+            <a href="#" class="nav-link interactable" data-type="link"
               >About <span class="small-number">03</span></a
             >
           </li>
@@ -34,18 +124,60 @@
       </div>
       <div class="menu-container right">
         <div class="information">
-          <p class="title">Where am I?</p>
-          <p class="description">123 my address</p>
+          <p class="title">Where we are?</p>
+          <p class="description">
+            <a href="#" class="interactable" data-type="map"
+              ><i class="fa-solid fa-location-dot"></i> cameroon, yaounde
+            </a>
+            <a href="#" class="interactable" data-type="map"
+              ><i class="fa-solid fa-location-dot"></i> changai, china</a
+            >
+            <a href="#" class="interactable" data-type="map"
+              ><i class="fa-solid fa-location-dot"></i> moscou, russia</a
+            >
+          </p>
         </div>
         <div class="information">
           <p class="title">Contact</p>
-          <p class="description">andrewwoan@gmail.com</p>
+          <p class="description">
+            <a href="tel:+89 19816253594" class="interactable" data-type="tel"
+              ><i class="fa-brands fa-whatsapp"></i>
+              <i class="fa-brands fa-telegram"></i> +89 19816253594</a
+            >
+            <a href="tel:+7 (925)336-11-79" class="interactable" data-type="tel"
+              ><i class="fa-brands fa-whatsapp"></i>
+              <i class="fa-brands fa-telegram"></i> +7 (925)336-11-79</a
+            >
+            <a
+              href="mailto:supporot@uhcxplore.com"
+              class="interactable"
+              data-type="mail"
+              ><i class="fa-solid fa-envelope-circle-check"></i>
+              supporot@uhcxplore.com</a
+            >
+          </p>
         </div>
         <div class="information">
-          <p class="title">Follow me</p>
-          <div class="social-medias">
-            <a href="" class="social-media">twitter</a>
-            <a href="" class="social-media">youtube</a>
+          <p class="title">Follow us</p>
+          <div class="description">
+            <a href="#" class="social-media interactable" data-type="link">
+              <i class="fa-brands fa-x-twitter"></i> Twitter
+            </a>
+            <a href="#" class="social-media interactable" data-type="link">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="#" class="social-media interactable" data-type="link">
+              <i class="fa-brands fa-facebook"></i> Facebook
+            </a>
+            <a href="#" class="social-media interactable" data-type="link">
+              <i class="fa-brands fa-youtube"></i> YouTube
+            </a>
+            <a href="#" class="social-media interactable" data-type="link">
+              <i class="fa-brands fa-tiktok"></i> TikTok
+            </a>
+            <a href="#" class="social-media interactable" data-type="link">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
           </div>
         </div>
       </div>
@@ -55,10 +187,12 @@
     <div class="content">
       <div class="loading">Loading</div>
       <div class="trigger"></div>
+
+
       <div class="section">
         <h1 class="split-text">UHC</h1>
         <h3 class="split-text">Innovative Solutions for a Better Future</h3>
-        <div class="description">
+        <div class="sub">
           <p>
             United Horizon Corporation (UHC) is a global cooperative founded by
             <br />
@@ -180,6 +314,24 @@
             expedita consequatur veritatis doloremque, debitis delectus illum
             voluptate mollitia, error voluptas optio.
           </p>
+
+          <div class="interactables-container">
+            <div
+              class="interactable-divider"
+              data-type="link"
+              style="
+                background-image: url(https://images.unsplash.com/photo-1657739774592-14c8f97eaece?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60);
+              "
+            ></div>
+
+            <div
+              class="interactable-divider"
+              data-type="video"
+              style="
+                background-image: url(https://images.unsplash.com/photo-1657779582398-a13b5896ff19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60);
+              "
+            ></div>
+          </div>
           <ul class="credits">
             <li>
               Made by

@@ -10,7 +10,7 @@ function _defineProperty(obj, key, value) {
     obj[key] = value;
   }
   return obj;
-} // clearing the console (just a CodePen thing)
+}
 
 console.clear();
 

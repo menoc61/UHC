@@ -1,9 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("'https://fonts.googleapis.com/css?family=Open+Sans:800&display=swap'");
 svg {
   z-index: 100;
 }
 
 :root {
+  --primary-color: #00aaff;
+  --secondary-color: #d0cbc7;
   --padding: 10vmin;
   --color-background: #6ca9df;
   --font-size-large: 8vw;
@@ -49,6 +51,61 @@ body {
   font-weight: 400;
   font-size: var(--font-size-normal);
   overflow-x: hidden;
+}
+body:hover > #trailer {
+  opacity: 1;
+}
+
+#trailer {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 20px;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 500ms ease;
+  display: grid;
+  place-items: center;
+}
+
+#trailer:not([data-type=""]) > #trailer-icon {
+  opacity: 1;
+}
+
+#trailer-icon {
+  font-size: 6px;
+  line-height: 4px;
+
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+.interactables-container {
+  background-color: rgb(20, 20, 20);
+  height: auto;
+  width: 100%;
+  padding: 20px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 4vw, 100px);
+}
+.interactable-divider {
+  aspect-ratio: 1 / 1.5;
+  width: clamp(120px, 40vmin, 600px);
+  background-position: center 50%;
+  background-size: 100%;
+  opacity: 0.4;
+  transition: background-size 400ms ease, opacity 400ms ease;
+}
+
+.interactable-divider:hover {
+  background-size: 105%;
+  opacity: 0.8;
 }
 
 canvas {
@@ -151,6 +208,7 @@ canvas {
 .content .credits {
   position: absolute;
   bottom: var(--padding);
+  color: white;
 }
 .content .scroll-cta {
   font-size: var(--font-size-medium);
@@ -212,6 +270,7 @@ canvas {
   height: 2px;
   background-color: white;
   position: relative;
+  transition: all 0.2s ease-in-out;
 }
 
 .menu-button span::before,
@@ -222,6 +281,7 @@ canvas {
   height: 2px;
   background-color: white;
   left: 0;
+  transition: all 0.2s ease-in-out;
 }
 
 .menu-button span::before {
@@ -230,6 +290,24 @@ canvas {
 
 .menu-button span::after {
   top: 6px;
+}
+
+.menu-button.active span {
+  background-color: transparent;
+}
+
+.menu-button.active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.menu-button.active span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.menu-button.active {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .menu {
@@ -299,14 +377,46 @@ canvas {
 .menu-container {
   z-index: 3;
 }
-
-.social-medias > a {
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+.description a{
+  color: white;
+  text-decoration: none;
+}
+.description .social-media {
+  display: flex;
+  align-items: center;
   color: white;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 0.9rem;
   letter-spacing: 1px;
+  transition: all 0.3s ease;
 }
+
+.description .social-media i {
+  font-size: 1.2rem; 
+  margin-right: 10px; 
+  transition: transform 0.3s ease; 
+}
+
+.description .social-media:hover {
+  color: var(--primary-color); 
+  transform: translateX(10px);
+}
+
+.description .social-media:hover i {
+  transform: scale(1.2); 
+}
+
 
 /* Media Query */
 @media screen and (max-width: 660px) {
@@ -318,24 +428,4 @@ canvas {
   .right {
     display: none;
   }
-}
-
-/* Read More Button */
-.read-more {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: black;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 50px;
-  cursor: pointer;
-  z-index: 1000;
-  transition: transform 0.3s, background-color 0.3s;
-}
-
-.read-more:hover {
-  transform: translateX(-50%) scale(1.1);
-  background-color: #333;
 }
